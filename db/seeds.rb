@@ -16,12 +16,12 @@ end
 
 abc = Category.all
 abc.each_with_index do |category, i|
-	category.products.build(name: "Product #{i}", price: (i)*1000).save
+	category.products.build(name_p: "Elemento #{i}", price: (i)*1000).save
 end 
 
-Product.create(name: "Product special_1", price: 3500, category: Category.last)
-Product.create(name: "Product special_2", price: 3500, category: Category.second)
-Product.create(name: "Product special_3", price: 3500, category: Category.first)
+Product.create(name_p: "Producto special_1", price: 3500, category: Category.last)
+Product.create(name_p: "Producto special_2", price: 3500, category: Category.second)
+Product.create(name_p: "Producto special_3", price: 3500, category: Category.first)
 
 Product.last.destroy
 
