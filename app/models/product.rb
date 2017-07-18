@@ -4,11 +4,19 @@ class Product < ApplicationRecord
   # rails 4 validates :category_id, prensence: true
   before_save :premium_por_defecto 
 
+  #estoy diciendo mostrar todos los productos premium que son verdaderos
+  scope :premium_todos, -> { where(premium: true)}
+
+  scope :last_n, -> (n) {limit(n)}
+  
   def premium_por_defecto
   	unless self.premium.present? || self.premium == true
   		self.premium = false
   	end
   end
+
+
+
 
 end
 
