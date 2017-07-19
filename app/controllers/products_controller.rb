@@ -11,4 +11,7 @@ class ProductsController < ApplicationController
 		@productos = Product.all
 	end
   end
+  def index_categoria
+  	
+  end
 end
