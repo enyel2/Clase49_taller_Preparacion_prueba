@@ -3,7 +3,7 @@ class ProductsController < ApplicationController
   	#con los params entregramos los parametros
   	#primero preguntamos si estamos recibiendo un parametro
   	if params[:search].present? 
-  		@productos = Product.where("name_p like ? or price like ?", "%#{params[:search]}%", "%#{params[:price].to_f}%")
+  		@productos = Product.where("name_p like ?", "%#{params[:search]}%")
   	elsif params[:price].present?
   		#permite encontrarlo solo entregando el valor exacto
 		@productos = Product.where(price: params[:price].to_i)
