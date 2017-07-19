@@ -11,7 +11,7 @@ Product.destroy_all
 Category.destroy_all
 
 3.times do |u|
-	Category.create(name: "Categ #{u}")
+	Category.create(name: "Categ #{u}", discount: rand(5..90))
 end
 
 abc = Category.all

@@ -1,0 +1,28 @@
+<h1>Products#index</h1>
+<!-- evitamos el token y nos ayudamos con el helper de rails -->
+<!-- hay que setiar las rutas -->
+<%= form_tag(:action => "index") do %>
+	<%= text_field_tag "search", nil, placeholder: "Nombre del producto", class: "class" %>
+	<%= text_field_tag "price", nil, placeholder: "Ingresar Precio" %>
+
+	<%= submit_tag "Enviar" %>
+<%end  %>
+
+
+
+<table>
+	<tr>
+		<td style="color:blue">Producto</td>
+		<td style="color:red">Precio</td>
+		<td style="color:blue">Categoria</td>
+	</tr>
+	
+	<% @productos.each do |n| %>
+		<tr>
+			<td><%= n.name_p %></td>
+			<td><%= n.price.to_i %></td>
+			<td><%= n.category.name %></td>
+		</tr>
+	<%end %>
+
+</table>
